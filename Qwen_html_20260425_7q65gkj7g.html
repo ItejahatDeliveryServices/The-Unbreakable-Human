@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>السلطة حين تمرض | محمود صابر</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Amiri:ital,wght@0,400;0,700;1,400&family=Tajawal:wght@300;400;700&display=swap');
+:root {
+  --bg: #0a0c10;
+  --page-bg: #111318;
+  --text: #d8dae0;
+  --muted: #9ca3af;
+  --gold: #d4af37;
+  --gold-light: #ebd382;
+  --accent: #1a1d24;
+  --spacing: 1.8rem;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Amiri', serif;
+  line-height: var(--spacing);
+  margin: 0;
+  padding: 20px;
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+}
+.book {
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--page-bg);
+  padding: 60px 50px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.7), 0 0 1px var(--gold-light);
+  border-radius: 6px;
+}
+h1, h2, h3, h4 {
+  font-family: 'Cairo', sans-serif;
+  color: var(--gold);
+  margin: 2.5rem 0 1.5rem;
+  line-height: 1.4;
+}
+h1 { font-size: 2.6rem; text-align: center; border-bottom: 2px solid var(--gold); padding-bottom: 15px; }
+h2 { font-size: 2rem; color: var(--gold-light); }
+h3 { font-size: 1.6rem; color: #e5e7eb; }
+p { margin-bottom: 1.2rem; font-size: 1.15rem; text-align: justify; }
+strong { color: var(--gold); }
+em { color: #6ee7b7; font-style: italic; }
+blockquote {
+  background: rgba(255,255,255,0.03);
+  border-right: 4px solid var(--gold);
+  padding: 25px 30px;
+  margin: 30px 0;
+  font-size: 1.3rem;
+  line-height: 2;
+  border-radius: 0 6px 6px 0;
+  position: relative;
+}
+blockquote::before {
+  content: '"';
+  position: absolute;
+  top: -15px;
+  right: 20px;
+  font-size: 3.5rem;
+  color: var(--gold);
+  font-family: Georgia, serif;
+}
+ul, ol { padding-right: 25px; margin: 1.5rem 0; }
+li { margin-bottom: 0.8rem; font-size: 1.1rem; }
+table { width: 100%; border-collapse: collapse; margin: 2rem 0; }
+th, td { padding: 12px; border: 1px solid #2a2d35; text-align: right; font-size: 1.05rem; }
+th { background: #1c1f26; color: var(--gold-light); }
+.ornament { text-align: center; color: var(--gold); margin: 50px 0; font-size: 1.2rem; letter-spacing: 12px; opacity: 0.7; }
+.page-break { page-break-before: always; clear: both; margin-top: 60px; border-top: 1px dashed #2a2d35; padding-top: 40px; }
+@media print {
+  body { background: #fff !important; color: #000 !important; padding: 0; }
+  .book { background: #fff; box-shadow: none; padding: 40px 30px; max-width: 100%; }
+  h1, h2, h3, strong, th { color: #000 !important; }
+  blockquote { background: #f8f8f8; border-right-color: #000; color: #222; }
+  blockquote::before { color: #999; }
+  .ornament { color: #666; }
+}
+</style>
+</head>
+<body>
+<div class="book">
+  <!-- ألصق المحتوى هنا -->
+</div>
+</body>
+</html>

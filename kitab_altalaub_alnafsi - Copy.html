@@ -1,0 +1,1638 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>مخطط كتاب: فن التلاعب النفسي — دليل المؤلف الشامل</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@300;400;500;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1208;
+    --parchment: #f5efe0;
+    --parchment-dark: #ede4ca;
+    --gold: #b8860b;
+    --gold-light: #d4a017;
+    --crimson: #8b1a1a;
+    --shadow-ink: #2d1f0e;
+    --chapter-stripe: #f0e8d0;
+    --accent-blue: #1a3a5c;
+    --accent-green: #1a4a2e;
+    --accent-purple: #3d1a5c;
+    --card-bg: rgba(255,255,255,0.7);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background-color: var(--parchment);
+    color: var(--ink);
+    line-height: 1.9;
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(184,134,11,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(139,26,26,0.05) 0%, transparent 50%);
+  }
+
+  /* ── COVER ── */
+  .cover {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #0d0804 0%, #1f1005 40%, #3a1a08 80%, #1a0d04 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse at 50% 30%, rgba(184,134,11,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse at 20% 80%, rgba(139,26,26,0.15) 0%, transparent 50%);
+  }
+
+  .cover-border {
+    position: absolute;
+    inset: 20px;
+    border: 1px solid rgba(184,134,11,0.3);
+    pointer-events: none;
+  }
+
+  .cover-border::before {
+    content: '';
+    position: absolute;
+    inset: 6px;
+    border: 1px solid rgba(184,134,11,0.15);
+  }
+
+  .cover-ornament {
+    font-size: 2rem;
+    color: var(--gold);
+    letter-spacing: 12px;
+    margin-bottom: 30px;
+    opacity: 0.8;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-title {
+    font-family: 'Amiri', serif;
+    font-size: clamp(2.8rem, 7vw, 5rem);
+    font-weight: 700;
+    color: #f0d090;
+    line-height: 1.3;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 4px 40px rgba(184,134,11,0.4);
+    margin-bottom: 16px;
+  }
+
+  .cover-subtitle {
+    font-family: 'Tajawal', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.4rem);
+    font-weight: 300;
+    color: rgba(240,208,144,0.7);
+    letter-spacing: 2px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-divider {
+    width: 200px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .cover-meta {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .cover-stat {
+    text-align: center;
+  }
+
+  .cover-stat-num {
+    font-family: 'Amiri', serif;
+    font-size: 2.2rem;
+    color: var(--gold-light);
+    display: block;
+  }
+
+  .cover-stat-label {
+    font-size: 0.85rem;
+    color: rgba(240,208,144,0.5);
+    font-weight: 300;
+  }
+
+  /* ── MAIN CONTAINER ── */
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 40px 24px;
+  }
+
+  /* ── SECTION HEADERS ── */
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 60px 0 30px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid var(--parchment-dark);
+    position: relative;
+  }
+
+  .section-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    right: 0;
+    width: 80px;
+    height: 2px;
+    background: var(--gold);
+  }
+
+  .section-num {
+    font-family: 'Amiri', serif;
+    font-size: 3rem;
+    color: var(--gold);
+    opacity: 0.4;
+    line-height: 1;
+    min-width: 50px;
+  }
+
+  .section-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.9rem;
+    color: var(--crimson);
+    font-weight: 700;
+  }
+
+  .section-desc {
+    font-size: 0.95rem;
+    color: #6b5a3e;
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  /* ── PART CARDS ── */
+  .parts-grid {
+    display: grid;
+    gap: 20px;
+  }
+
+  .part-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(184,134,11,0.2);
+    border-radius: 4px;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 2px 20px rgba(26,18,8,0.08);
+  }
+
+  .part-header {
+    padding: 20px 28px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .part-header.color-1 { background: linear-gradient(135deg, #1a3a5c 0%, #0d2040 100%); }
+  .part-header.color-2 { background: linear-gradient(135deg, #3d1a5c 0%, #25103a 100%); }
+  .part-header.color-3 { background: linear-gradient(135deg, #5c1a1a 0%, #3a0d0d 100%); }
+  .part-header.color-4 { background: linear-gradient(135deg, #1a4a2e 0%, #0d2e1a 100%); }
+  .part-header.color-5 { background: linear-gradient(135deg, #4a3a10 0%, #2e250a 100%); }
+  .part-header.color-6 { background: linear-gradient(135deg, #1a3a4a 0%, #0d2230 100%); }
+
+  .part-num-badge {
+    font-family: 'Amiri', serif;
+    font-size: 2.2rem;
+    color: rgba(255,255,255,0.25);
+    min-width: 50px;
+    text-align: center;
+    line-height: 1;
+  }
+
+  .part-info { flex: 1; }
+
+  .part-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: rgba(255,255,255,0.4);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .part-name {
+    font-family: 'Amiri', serif;
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.92);
+    font-weight: 700;
+    line-height: 1.3;
+  }
+
+  .part-chapters-count {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.4);
+    margin-top: 4px;
+  }
+
+  .part-body {
+    padding: 24px 28px;
+    background: rgba(255,255,255,0.5);
+  }
+
+  .chapter-list {
+    display: grid;
+    gap: 12px;
+  }
+
+  .chapter-item {
+    display: grid;
+    grid-template-columns: 36px 1fr;
+    gap: 14px;
+    align-items: start;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 3px;
+    border-right: 3px solid var(--gold);
+    border-right-color: inherit;
+    transition: transform 0.2s;
+  }
+
+  .chapter-item:hover { transform: translateX(-3px); }
+
+  .chapter-item.c1 { border-right-color: #1a3a5c; }
+  .chapter-item.c2 { border-right-color: #3d1a5c; }
+  .chapter-item.c3 { border-right-color: #5c1a1a; }
+  .chapter-item.c4 { border-right-color: #1a4a2e; }
+  .chapter-item.c5 { border-right-color: #4a3a10; }
+  .chapter-item.c6 { border-right-color: #1a3a4a; }
+
+  .ch-num {
+    font-family: 'Amiri', serif;
+    font-size: 1.3rem;
+    color: var(--gold);
+    text-align: center;
+    line-height: 1.2;
+  }
+
+  .ch-content {}
+
+  .ch-title {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--ink);
+    margin-bottom: 4px;
+  }
+
+  .ch-desc {
+    font-size: 0.85rem;
+    color: #6b5a3e;
+    line-height: 1.6;
+  }
+
+  .ch-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .tag {
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+  }
+
+  .tag-science { background: rgba(26,58,92,0.12); color: #1a3a5c; }
+  .tag-story { background: rgba(139,26,26,0.12); color: var(--crimson); }
+  .tag-tactic { background: rgba(61,26,92,0.12); color: #3d1a5c; }
+  .tag-life { background: rgba(26,74,46,0.12); color: #1a4a2e; }
+  .tag-defense { background: rgba(74,58,16,0.12); color: #4a3a10; }
+
+  /* ── RESEARCH CARDS ── */
+  .research-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+    margin-top: 10px;
+  }
+
+  .research-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(184,134,11,0.15);
+    border-radius: 4px;
+    padding: 22px;
+    backdrop-filter: blur(4px);
+  }
+
+  .research-card-icon {
+    font-size: 2rem;
+    margin-bottom: 12px;
+    display: block;
+  }
+
+  .research-card-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--crimson);
+    margin-bottom: 10px;
+  }
+
+  .research-card-body {
+    font-size: 0.88rem;
+    color: #4a3a28;
+    line-height: 1.8;
+  }
+
+  .research-card-source {
+    font-size: 0.75rem;
+    color: #9a8060;
+    margin-top: 12px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(184,134,11,0.15);
+    font-style: italic;
+  }
+
+  /* ── STORIES SECTION ── */
+  .story-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(184,134,11,0.2);
+    border-radius: 4px;
+    padding: 26px 28px;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .story-card::before {
+    content: '❝';
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-family: 'Amiri', serif;
+    font-size: 5rem;
+    color: rgba(184,134,11,0.1);
+    line-height: 1;
+  }
+
+  .story-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 3px 10px;
+    background: var(--crimson);
+    color: white;
+    border-radius: 2px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+
+  .story-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 12px;
+  }
+
+  .story-body {
+    font-size: 0.9rem;
+    color: #4a3a28;
+    line-height: 1.85;
+  }
+
+  .story-lesson {
+    margin-top: 16px;
+    padding: 14px 18px;
+    background: rgba(184,134,11,0.08);
+    border-right: 3px solid var(--gold);
+    font-size: 0.88rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+
+  .story-lesson::before {
+    content: '🔑 الدرس: ';
+    font-weight: 700;
+    color: var(--gold);
+  }
+
+  /* ── TACTICS TABLE ── */
+  .tactics-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(26,18,8,0.08);
+    margin-top: 10px;
+  }
+
+  .tactics-table thead tr {
+    background: var(--ink);
+  }
+
+  .tactics-table thead th {
+    padding: 14px 18px;
+    color: var(--gold);
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-align: right;
+  }
+
+  .tactics-table tbody tr {
+    border-bottom: 1px solid rgba(184,134,11,0.12);
+    transition: background 0.2s;
+  }
+
+  .tactics-table tbody tr:hover {
+    background: rgba(184,134,11,0.06);
+  }
+
+  .tactics-table tbody td {
+    padding: 14px 18px;
+    font-size: 0.87rem;
+    color: #3a2e1e;
+    vertical-align: top;
+  }
+
+  .tactics-table tbody td:first-child {
+    font-weight: 700;
+    color: var(--ink);
+  }
+
+  .severity-high { color: var(--crimson); font-weight: 700; }
+  .severity-med { color: #8b6a00; font-weight: 700; }
+  .severity-low { color: #1a4a2e; font-weight: 700; }
+
+  /* ── FRAMEWORK BOX ── */
+  .framework-box {
+    background: linear-gradient(135deg, #0d0804 0%, #1f1005 100%);
+    border-radius: 4px;
+    padding: 40px;
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .framework-box::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 50%, rgba(184,134,11,0.12) 0%, transparent 60%);
+  }
+
+  .framework-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.5rem;
+    color: var(--gold-light);
+    margin-bottom: 24px;
+    position: relative;
+  }
+
+  .framework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    position: relative;
+  }
+
+  .fw-item {
+    padding: 16px;
+    border: 1px solid rgba(184,134,11,0.2);
+    border-radius: 3px;
+    text-align: center;
+    transition: border-color 0.2s;
+  }
+
+  .fw-item:hover { border-color: var(--gold); }
+
+  .fw-icon {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .fw-name {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: rgba(240,208,144,0.85);
+  }
+
+  .fw-desc {
+    font-size: 0.75rem;
+    color: rgba(240,208,144,0.4);
+    margin-top: 4px;
+  }
+
+  /* ── TIMELINE ── */
+  .timeline {
+    position: relative;
+    padding-right: 30px;
+    margin-top: 10px;
+  }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--gold), rgba(184,134,11,0.1));
+  }
+
+  .timeline-item {
+    position: relative;
+    padding: 0 30px 30px 0;
+  }
+
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--parchment);
+  }
+
+  .tl-phase {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+
+  .tl-title {
+    font-family: 'Amiri', serif;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+
+  .tl-desc {
+    font-size: 0.87rem;
+    color: #6b5a3e;
+    line-height: 1.7;
+  }
+
+  /* ── FOOTER ── */
+  .book-footer {
+    background: var(--ink);
+    color: rgba(240,208,144,0.5);
+    text-align: center;
+    padding: 40px 24px;
+    font-size: 0.85rem;
+    margin-top: 80px;
+    letter-spacing: 1px;
+  }
+
+  .book-footer strong {
+    color: var(--gold);
+    font-family: 'Amiri', serif;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  /* ── HIGHLIGHT BOX ── */
+  .highlight-box {
+    background: rgba(139,26,26,0.07);
+    border-right: 4px solid var(--crimson);
+    padding: 18px 22px;
+    margin: 20px 0;
+    border-radius: 0 4px 4px 0;
+  }
+
+  .highlight-box p {
+    font-size: 0.9rem;
+    color: #3a1a1a;
+    line-height: 1.8;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 700px) {
+    .research-grid { grid-template-columns: 1fr; }
+    .framework-grid { grid-template-columns: 1fr 1fr; }
+    .part-header { flex-direction: column; align-items: flex-start; gap: 10px; }
+    .tactics-table { font-size: 0.78rem; }
+    .tactics-table thead th, .tactics-table tbody td { padding: 10px 12px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════
+     COVER
+══════════════════════════════════════════════ -->
+<div class="cover">
+  <div class="cover-border"></div>
+  <div class="cover-ornament">◆ ◇ ◆</div>
+  <h1 class="cover-title">فن التلاعب النفسي</h1>
+  <p class="cover-subtitle">كيف تُقرأ العقول · كيف تُهيمن على القرارات · كيف تحمي نفسك</p>
+  <div class="cover-divider"></div>
+  <div class="cover-meta">
+    <div class="cover-stat">
+      <span class="cover-stat-num">٧</span>
+      <span class="cover-stat-label">أجزاء رئيسية</span>
+    </div>
+    <div class="cover-stat">
+      <span class="cover-stat-num">٢٨</span>
+      <span class="cover-stat-label">فصلاً متكاملاً</span>
+    </div>
+    <div class="cover-stat">
+      <span class="cover-stat-num">٤٥+</span>
+      <span class="cover-stat-label">قصة حقيقية</span>
+    </div>
+    <div class="cover-stat">
+      <span class="cover-stat-num">٣٠+</span>
+      <span class="cover-stat-label">دراسة علمية</span>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ══ SECTION 1: مقدمة المخطط ══ -->
+  <div class="section-header">
+    <span class="section-num">١</span>
+    <div>
+      <div class="section-title">المحاور المستخرجة من المستند</div>
+      <div class="section-desc">تحليل محتوى التطبيق المصدر — الأسس التي بُنيت عليها هيكلة الكتاب</div>
+    </div>
+  </div>
+
+  <div class="highlight-box">
+    <p>
+      المستند المرفق عبارة عن لقطات شاشة من تطبيق موبايل متخصص في علم النفس المظلم والتلاعب.
+      يغطي التطبيق: <strong>الأسس النفسية</strong> (نموذج ELM، العقل الباطن)،
+      <strong>مبادئ سيالديني</strong> السبعة للتأثير،
+      <strong>الاستماع الفعال</strong>، <strong>صياغة الكلام</strong>،
+      <strong>أنماط الشخصيات العصرية</strong>، <strong>قصص نفسية حقيقية</strong>
+      (تجربة آش، احتيال مادوف)، وسيناريوهات تفاعلية للتدريب.
+      هذه الأجزاء ستشكل العمود الفقري للكتاب مع إضافة البُعد العلمي والتجربة الحياتية.
+    </p>
+  </div>
+
+  <!-- ══ SECTION 2: هيكل الكتاب ══ -->
+  <div class="section-header">
+    <span class="section-num">٢</span>
+    <div>
+      <div class="section-title">هيكل الكتاب الكامل — ٧ أجزاء · ٢٨ فصلاً</div>
+      <div class="section-desc">مخطط مفصل لكل جزء وفصوله مع الزاوية العلمية والقصص الداعمة</div>
+    </div>
+  </div>
+
+  <div class="parts-grid">
+
+    <!-- ══ PART 1 ══ -->
+    <div class="part-card">
+      <div class="part-header color-1">
+        <div class="part-num-badge">١</div>
+        <div class="part-info">
+          <div class="part-label">الجزء الأول</div>
+          <div class="part-name">العقل المُستهدَف — كيف يعمل الدماغ تحت التأثير</div>
+          <div class="part-chapters-count">٤ فصول — الأساس العلمي والنفسي</div>
+        </div>
+      </div>
+      <div class="part-body">
+        <div class="chapter-list">
+
+          <div class="chapter-item c1">
+            <div class="ch-num">١</div>
+            <div class="ch-content">
+              <div class="ch-title">خريطة الدماغ البشري: أين يكمن الضعف؟</div>
+              <div class="ch-desc">
+                الدماغ الثلاثي (زواحفي — ثديي — عقلاني). الأميغدالا ومختطف المشاعر.
+                كيف تُقصِّر حالات الخوف والحب والإلحاح مسار التفكير العقلاني.
+                دراسة دانيال كانيمان عن النظام ١ والنظام ٢ في التفكير.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">علم الأعصاب</span>
+                <span class="tag tag-tactic">تكتيك</span>
+                <span class="tag tag-story">قصة حقيقية</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c1">
+            <div class="ch-num">٢</div>
+            <div class="ch-content">
+              <div class="ch-title">العقل الباطن: المحرك الخفي للقرارات</div>
+              <div class="ch-desc">
+                نموذج ELM لـ Petty & Cacioppo: المسار المركزي مقابل المسار الطرفي.
+                كيف يتخذ الإنسان ٩٥٪ من قراراته دون وعي كامل.
+                التمييز بين الإقناع والتلاعب من منظور عصبي.
+                قصة: حملة تسويقية أدارها مستشار لرئيس دولة.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">دراسة ELM</span>
+                <span class="tag tag-story">حادثة سياسية</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c1">
+            <div class="ch-num">٣</div>
+            <div class="ch-content">
+              <div class="ch-title">الأنماط المعرفية والتحيزات الإدراكية</div>
+              <div class="ch-desc">
+                ٢٠+ تحيزاً معرفياً يستغلها المتلاعبون: تحيز التثبيت، تأثير الإطار، مغالطة التكلفة الغارقة،
+                الدليل الاجتماعي، تحيز الحداثة. كيف يعرف المتلاعب المحترف أيها يستهدف أولاً.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">علم النفس المعرفي</span>
+                <span class="tag tag-tactic">قائمة تكتيكات</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c1">
+            <div class="ch-num">٤</div>
+            <div class="ch-content">
+              <div class="ch-title">الشخصيات المُعرَّضة للتلاعب أكثر من غيرها</div>
+              <div class="ch-desc">
+                سمات الشخصية الخمس الكبرى (Big Five) وعلاقتها بقابلية التأثر.
+                الشخصية التوافقية العالية (Agreeableness). الاحتياج العاطفي والجروح الداخلية.
+                نقاط الضعف التي يرصدها المتلاعب في الدقائق الأولى.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">علم الشخصية</span>
+                <span class="tag tag-defense">الحماية</span>
+                <span class="tag tag-life">تجربة حياتية</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PART 2 ══ -->
+    <div class="part-card">
+      <div class="part-header color-2">
+        <div class="part-num-badge">٢</div>
+        <div class="part-info">
+          <div class="part-label">الجزء الثاني</div>
+          <div class="part-name">أنماط الشخصيات المظلمة — الثالوث الأسود والأنماط العصرية</div>
+          <div class="part-chapters-count">٥ فصول — من هم المتلاعبون؟</div>
+        </div>
+      </div>
+      <div class="part-body">
+        <div class="chapter-list">
+
+          <div class="chapter-item c2">
+            <div class="ch-num">٥</div>
+            <div class="ch-content">
+              <div class="ch-title">الثالوث الأسود: النرجسي · الميكيافيلي · السيكوباتي</div>
+              <div class="ch-desc">
+                دراسة Paulhus & Williams 2002 التي أسست مفهوم Dark Triad.
+                الفوارق الدقيقة بين الشخصيات الثلاث. كيف يُشخِّص المتخصصون هذه الأنماط؟
+                نسبة انتشارها في بيئات العمل (تصل إلى ٢١٪ في المناصب الإدارية).
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">دراسة ٢٠٠٢</span>
+                <span class="tag tag-story">قصة مدير شركة</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c2">
+            <div class="ch-num">٦</div>
+            <div class="ch-content">
+              <div class="ch-title">النرجسية بين الانبهار والخطر — درجات المقياس</div>
+              <div class="ch-desc">
+                مقياس NPI وكيف تُقرأ النتائج. النرجسي الضعيف (Vulnerable Narcissist) مقابل الجليّ.
+                دورة: التمجيد ← التقليل ← الرفض. حالة حقيقية موثقة: علاقة نرجسية في بيئة عمل.
+                بحث 2025 عن أثر النرجسية في التلاعب العاطفي بمكان العمل.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">دراسة ٢٠٢٥</span>
+                <span class="tag tag-story">قصة علاقة</span>
+                <span class="tag tag-tactic">تكتيكات</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c2">
+            <div class="ch-num">٧</div>
+            <div class="ch-content">
+              <div class="ch-title">الشخصيات العصرية الحديثة — من الرؤيوي إلى المحتال الرقمي</div>
+              <div class="ch-desc">
+                أنماط جديدة في العصر الرقمي: المبتكر الرؤيوي (Visionary Innovator)، المتمالك العاطفي،
+                الشخصية الكاريزمية الخبيثة في وسائل التواصل، شخصية "السيد لطيف" في بيئات العمل.
+                كيف تتنكر الشخصيات المظلمة في ملابس الإيجابية والنجاح.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-life">ظاهرة عصرية</span>
+                <span class="tag tag-tactic">تمييز الأنماط</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c2">
+            <div class="ch-num">٨</div>
+            <div class="ch-content">
+              <div class="ch-title">التلاعب العاطفي في الأسرة — الأب السلطوي والأم الشهيدة</div>
+              <div class="ch-desc">
+                تلاعب الوالدين بالأبناء عبر الذنب والخوف والمقارنة. أثر الطفولة على بناء شخصية قابلة للتلاعب.
+                نظرية الإرتباط (Attachment Theory) لبولبي وأثرها على العلاقات البالغة.
+                قصص حقيقية من ثقافات مختلفة.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">نظرية الارتباط</span>
+                <span class="tag tag-life">بيئة الأسرة</span>
+                <span class="tag tag-story">قصة حقيقية</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c2">
+            <div class="ch-num">٩</div>
+            <div class="ch-content">
+              <div class="ch-title">المتلاعب في بيئة العمل — الزميل والمدير والرئيس</div>
+              <div class="ch-desc">
+                التلاعب الهرمي (من الأعلى للأسفل) والأفقي. تكتيكات الاستيلاء على الفضل.
+                إسكات المعارضة وتشكيل التحالفات السرية. دراسة Mahbod 2025 عن نمط القيادة المظلم.
+                قصة: ترقية مسروقة في شركة متعددة الجنسيات.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-life">بيئة العمل</span>
+                <span class="tag tag-science">دراسة ٢٠٢٥</span>
+                <span class="tag tag-story">قصة مؤسسية</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PART 3 ══ -->
+    <div class="part-card">
+      <div class="part-header color-3">
+        <div class="part-num-badge">٣</div>
+        <div class="part-info">
+          <div class="part-label">الجزء الثالث</div>
+          <div class="part-name">التكتيكات والأسلحة النفسية — المرجع الميداني الشامل</div>
+          <div class="part-chapters-count">٦ فصول — الأدوات بالتفصيل</div>
+        </div>
+      </div>
+      <div class="part-body">
+        <div class="chapter-list">
+
+          <div class="chapter-item c3">
+            <div class="ch-num">١٠</div>
+            <div class="ch-content">
+              <div class="ch-title">الغاز لايتينغ — محو الواقع وإعادة برمجة الذاكرة</div>
+              <div class="ch-desc">
+                دراسة McGill 2025: "تلوث خطأ التنبؤ" وكيف يُعيد الغازليتينغ برمجة الدماغ.
+                مراحل الغازليتينغ الثلاث (الإنكار — الهجوم المضاد — تحويل الاتهام).
+                بحث Klein & Wood 2023-2025 مع ٦٥ ناجياً. قصة موثقة من قاعة المحكمة.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">دراسة McGill ٢٠٢٥</span>
+                <span class="tag tag-story">قضية قانونية</span>
+                <span class="tag tag-tactic">تكتيك محوري</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c3">
+            <div class="ch-num">١١</div>
+            <div class="ch-content">
+              <div class="ch-title">قصف الحب والإفراط في التمجيد — فخ الوقوع</div>
+              <div class="ch-desc">
+                Love Bombing كتكتيك إدمان عاطفي. كيف يُشابه مسار الإدمان نيوروكيميائياً (الدوبامين والسيروتونين).
+                الانتقال من التمجيد إلى التقليل والتعذيب التدريجي.
+                حالات من بيئات مختلفة: علاقات رومانسية، جماعات دينية، شركات ناشئة.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">نيوروكيمياء</span>
+                <span class="tag tag-tactic">تكتيك نرجسي</span>
+                <span class="tag tag-story">قصة ثلاث بيئات</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c3">
+            <div class="ch-num">١٢</div>
+            <div class="ch-content">
+              <div class="ch-title">مبادئ التأثير السبعة — سيالديني وما وراءه</div>
+              <div class="ch-desc">
+                المبادئ السبعة: المعاملة بالمثل، الالتزام والثبات، الدليل الاجتماعي، السلطة، الإعجاب،
+                الندرة، الوحدة (Unity). الفرق بين الإقناع الأخلاقي والتلاعب.
+                كيف يستغل المتلاعب المحترف كل مبدأ في السياق الصحيح.
+                أمثلة: البيع بالضغط، التبرع القسري، الإذعان السياسي.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">Cialdini</span>
+                <span class="tag tag-tactic">٧ مبادئ</span>
+                <span class="tag tag-life">تطبيقات يومية</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c3">
+            <div class="ch-num">١٣</div>
+            <div class="ch-content">
+              <div class="ch-title">الضغط الاجتماعي والامتثال الجماعي</div>
+              <div class="ch-desc">
+                تجربة آش للمطابقة 1950: ٣٧٪ من المشاركين وافقوا على إجابة خاطئة خوفاً من الإقصاء.
+                التضامن الأعمى وسيكولوجية الحشد. تجربة ميلغرام عن الطاعة للسلطة.
+                كيف تستغل الأنظمة والجماعات هذه الآليات. تطبيقات عصرية في منصات التواصل الاجتماعي.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">تجربة آش</span>
+                <span class="tag tag-science">تجربة ميلغرام</span>
+                <span class="tag tag-story">تطبيق رقمي</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c3">
+            <div class="ch-num">١٤</div>
+            <div class="ch-content">
+              <div class="ch-title">صياغة الكلام والإطار اللغوي — أداة المحترف</div>
+              <div class="ch-desc">
+                نظرية الإطار (Framing) لـ Kahneman & Tversky: نفس الحقيقة بصياغتين متعاكستي الأثر.
+                الكلمات المُحملة عاطفياً. استخدام الضمائر "نحن" مقابل "أنتم".
+                تقنيات إعادة التأطير في المفاوضات والعلاقات. قصة: خطاب سياسي غيّر رأي الجمهور.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">نظرية الإطار</span>
+                <span class="tag tag-tactic">تقنية لغوية</span>
+                <span class="tag tag-story">خطاب سياسي</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c3">
+            <div class="ch-num">١٥</div>
+            <div class="ch-content">
+              <div class="ch-title">التلاعب العاطفي المتقدم — الذنب والخوف والشفقة</div>
+              <div class="ch-desc">
+                ثالوث التحكم العاطفي. الابتزاز العاطفي: الإخافة، الالتزام، الذنب.
+                Susan Forward نموذج FOG (Fear, Obligation, Guilt). استخدام الصمت كسلاح.
+                المعاقبة العاطفية التدريجية. قصص من بيئات الأسرة والعمل والعلاقات.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-tactic">ثالوث عاطفي</span>
+                <span class="tag tag-science">نموذج FOG</span>
+                <span class="tag tag-life">قصص متعددة</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PART 4 ══ -->
+    <div class="part-card">
+      <div class="part-header color-4">
+        <div class="part-num-badge">٤</div>
+        <div class="part-info">
+          <div class="part-label">الجزء الرابع</div>
+          <div class="part-name">الاستماع الفعال وفن قراءة الناس — أدوات الرصد والتأثير</div>
+          <div class="part-chapters-count">٤ فصول — كيف تقرأ الآخرين قبل أن يقرأوك</div>
+        </div>
+      </div>
+      <div class="part-body">
+        <div class="chapter-list">
+
+          <div class="chapter-item c4">
+            <div class="ch-num">١٦</div>
+            <div class="ch-content">
+              <div class="ch-title">الاستماع الفعال كأقوى أداة تأثير</div>
+              <div class="ch-desc">
+                الفرق بين السماع والاستماع. مستويات الاستماع الثلاثة.
+                كيف يرفع الاستماع العميق تأثيرك بنسبة ٨٣٪.
+                تقنيات: عكس المشاعر، طرح أسئلة التوضيح، التلخيص للتأكيد.
+                استخدامه من قِبَل المحققين والمفاوضين والمعالجين النفسيين.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-tactic">تقنية محورية</span>
+                <span class="tag tag-life">تطبيق فوري</span>
+                <span class="tag tag-science">إحصاء ٨٣٪</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c4">
+            <div class="ch-num">١٧</div>
+            <div class="ch-content">
+              <div class="ch-title">لغة الجسد وقراءة الإشارات الخفية</div>
+              <div class="ch-desc">
+                مؤشرات الكذب الغير لفظية. الميكروإكسبريشنز وتقنيات Paul Ekman.
+                قراءة التوتر والانجذاب والرفض من الموقف والحركة واتجاه القدمين.
+                كيف يستخدم المتلاعب المحترف هذه المعرفة لتحديد الثغرات.
+                قصة: تاجر مخدرات اعترف لمحقق خبير في لغة الجسد.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">Paul Ekman</span>
+                <span class="tag tag-tactic">رصد وتحليل</span>
+                <span class="tag tag-story">قصة تحقيق</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c4">
+            <div class="ch-num">١٨</div>
+            <div class="ch-content">
+              <div class="ch-title">فن طرح الأسئلة وانتزاع المعلومات</div>
+              <div class="ch-desc">
+                الأسئلة المفتوحة مقابل المغلقة مقابل الإيحائية. تقنية SPIN في المبيعات.
+                أسلوب سقراط في القيادة إلى نتيجة محددة. الأسئلة القاتلة في الاستجواب.
+                كيف يجمع المتلاعب المعلومات دون أن يُلاحَظ. قصة مفاوضة رهينة.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-tactic">تقنية الأسئلة</span>
+                <span class="tag tag-story">مفاوضة رهائن</span>
+                <span class="tag tag-science">SPIN Selling</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c4">
+            <div class="ch-num">١٩</div>
+            <div class="ch-content">
+              <div class="ch-title">بناء التقارب السريع (Rapport) واستغلاله</div>
+              <div class="ch-desc">
+                تقنيات بناء الثقة في دقائق: التطابق، المرآة، إيجاد القواسم المشتركة.
+                كيف يستغل النصابون التقارب لبناء الثقة قبل الضربة.
+                قصة برني مادوف: أكبر مخطط بونزي في التاريخ — استغل العلاقات الاجتماعية
+                ليخسّر المستثمرين ٦٥ مليار دولار.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-tactic">Rapport Building</span>
+                <span class="tag tag-story">برني مادوف</span>
+                <span class="tag tag-science">نيورو-لينغويستيك</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PART 5 ══ -->
+    <div class="part-card">
+      <div class="part-header color-5">
+        <div class="part-num-badge">٥</div>
+        <div class="part-info">
+          <div class="part-label">الجزء الخامس</div>
+          <div class="part-name">التلاعب عبر السياقات — الأسرة والعمل والسياسة والرقمية</div>
+          <div class="part-chapters-count">٥ فصول — الميادين الحياتية الكاملة</div>
+        </div>
+      </div>
+      <div class="part-body">
+        <div class="chapter-list">
+
+          <div class="chapter-item c5">
+            <div class="ch-num">٢٠</div>
+            <div class="ch-content">
+              <div class="ch-title">التلاعب في العلاقات الرومانسية — دورة الإساءة النفسية</div>
+              <div class="ch-desc">
+                مراحل العلاقة النرجسية الأربع. الإساءة العاطفية وأعراض Narcissistic Abuse Syndrome.
+                لماذا لا تغادر الضحايا؟ علم نفس الارتباط الصادم (Trauma Bonding).
+                آخر الأبحاث 2025-2026 حول تشخيص وعلاج الإساءة النرجسية.
+                قصة موثقة من قاعة محاكم.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">بحث ٢٠٢٦</span>
+                <span class="tag tag-story">قضية محاكم</span>
+                <span class="tag tag-tactic">دورة الإساءة</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c5">
+            <div class="ch-num">٢١</div>
+            <div class="ch-content">
+              <div class="ch-title">التلاعب السياسي والجماهيري — أسلحة الخطاب</div>
+              <div class="ch-desc">
+                دعاية جوبلز وتقنياته الست. فريمينغ الحروب والأزمات.
+                Agenda Setting في وسائل الإعلام. الخطاب الشعبوي وآليات استغلال الخوف الجماعي.
+                دراسة حالة: خطاب أدى إلى أحداث تاريخية مُغيِّرة.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-story">أحداث تاريخية</span>
+                <span class="tag tag-tactic">دعاية جماهيرية</span>
+                <span class="tag tag-science">إعلام وأجندة</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c5">
+            <div class="ch-num">٢٢</div>
+            <div class="ch-content">
+              <div class="ch-title">التلاعب الرقمي — خوارزميات الإدمان ومصانع الرأي</div>
+              <div class="ch-desc">
+                كيف تُلاعب تطبيقات السوشيال ميديا العقل: التعزيز المتقطع، الإشعارات، الـ Infinite Scroll.
+                دراسة هارفارد 2025 عن التلاعب العاطفي لروبوتات المحادثة.
+                خوارزميات الغرف الصدوية وتشكيل المعتقدات. Deepfakes كأداة تلاعب.
+                قصة: نصب إلكتروني بإذن عاطفي (Romance Scam) يستنزف مدخرات متقاعدة.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">دراسة هارفارد ٢٠٢٥</span>
+                <span class="tag tag-story">Romance Scam</span>
+                <span class="tag tag-life">تهديد رقمي</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c5">
+            <div class="ch-num">٢٣</div>
+            <div class="ch-content">
+              <div class="ch-title">التلاعب في التفاوض والبيع والتسويق</div>
+              <div class="ch-desc">
+                تكتيكات المفاوض الأسود (Chris Voss): التعاطف التكتيكي، المرآة، التسمية.
+                ضغط البيع: الندرة المصطنعة، الإلحاح الزائف، تأثير "القدم في الباب".
+                تكتيكات المتاجر الفعلية والرقمية لاستنزاف المحافظ.
+                حالة: موقع تجارة إلكترونية خسر ٣٠ مليون بسبب تكتيك تلاعبي انقلب عليه.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">Chris Voss</span>
+                <span class="tag tag-tactic">تفاوض وبيع</span>
+                <span class="tag tag-story">قصة شركة</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c5">
+            <div class="ch-num">٢٤</div>
+            <div class="ch-content">
+              <div class="ch-title">التلاعب في المجموعات الدينية والطوائف — ظاهرة عالمية</div>
+              <div class="ch-desc">
+                تعريف السيطرة الذهنية (Mind Control) عبر BITE Model لـ Steven Hassan.
+                مراحل تجنيد الطائفة. حالات Jonestown وHeaven's Gate وNXIVM.
+                الخصائص المشتركة لزعماء الطوائف: الكاريزما + العزل + إعادة التأطير.
+                كيف تتشكل عقلية "نحن مقابل هم".
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-science">BITE Model</span>
+                <span class="tag tag-story">NXIVM · Jonestown</span>
+                <span class="tag tag-tactic">سيطرة ذهنية</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PART 6 ══ -->
+    <div class="part-card">
+      <div class="part-header color-6">
+        <div class="part-num-badge">٦</div>
+        <div class="part-info">
+          <div class="part-label">الجزء السادس</div>
+          <div class="part-name">الدرع والسيف — كيف تتعرف وتواجه وتحمي نفسك</div>
+          <div class="part-chapters-count">٣ فصول — استعادة السيادة النفسية</div>
+        </div>
+      </div>
+      <div class="part-body">
+        <div class="chapter-list">
+
+          <div class="chapter-item c6">
+            <div class="ch-num">٢٥</div>
+            <div class="ch-content">
+              <div class="ch-title">كيف تكتشف التلاعب وأنت في وسطه</div>
+              <div class="ch-desc">
+                ١٥ علامة إنذار مبكر. قائمة التحقق العملية.
+                لماذا يصعب الكشف عن التلاعب من الداخل؟ (ظاهرة الضفدع في الماء الساخن).
+                دور الحدس والبيانات الجسدية. الأسئلة التي تفضح المتلاعب.
+                اختبار: هل أنت في علاقة تلاعبية الآن؟
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-defense">الكشف المبكر</span>
+                <span class="tag tag-life">اختبار تقييمي</span>
+                <span class="tag tag-tactic">١٥ علامة</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c6">
+            <div class="ch-num">٢٦</div>
+            <div class="ch-content">
+              <div class="ch-title">تقنيات المواجهة والخروج الآمن</div>
+              <div class="ch-desc">
+                تقنية "السجل المكسور" والحدود الصارمة. خطة الخروج المرحلية من علاقة تلاعبية.
+                كيف تواجه المتلاعب دون أن تتضرر. تقنية Gray Rock (الصخرة الرمادية).
+                استعادة الدعم الاجتماعي. قصة شخص استعاد حياته بعد ثلاث سنوات تلاعب.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-defense">خطة الخروج</span>
+                <span class="tag tag-tactic">Gray Rock</span>
+                <span class="tag tag-story">قصة تعافٍ</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="chapter-item c6">
+            <div class="ch-num">٢٧</div>
+            <div class="ch-content">
+              <div class="ch-title">بناء المناعة النفسية — حصّن عقلك بشكل دائم</div>
+              <div class="ch-desc">
+                التفكير النقدي كأول خط دفاع. بناء هوية راسخة تقاوم إعادة التأطير.
+                الذكاء العاطفي كترياق: كيف تُفرِّق بين مشاعرك ومشاعر من يُلاعبك.
+                تمارين يومية من علم الأعصاب وتمارين الاستقلالية المعرفية.
+                الصداقات الصادقة كشبكة حماية.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-defense">مناعة نفسية</span>
+                <span class="tag tag-science">نيورولوجيا</span>
+                <span class="tag tag-life">تمارين يومية</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- ══ PART 7 ══ -->
+    <div class="part-card">
+      <div class="part-header color-1" style="background: linear-gradient(135deg, #2a1a0a 0%, #1a0d04 100%);">
+        <div class="part-num-badge">٧</div>
+        <div class="part-info">
+          <div class="part-label">الجزء السابع — الخاتمة</div>
+          <div class="part-name">التأثير الأخلاقي — كيف تُؤثِّر دون أن تُلاعب</div>
+          <div class="part-chapters-count">١ فصل ختامي — الحكمة والمسؤولية</div>
+        </div>
+      </div>
+      <div class="part-body">
+        <div class="chapter-list">
+          <div class="chapter-item c5">
+            <div class="ch-num">٢٨</div>
+            <div class="ch-content">
+              <div class="ch-title">الخيط الفاصل بين التأثير والتلاعب — المسؤولية الأخلاقية</div>
+              <div class="ch-desc">
+                ما الفرق الجوهري؟ نموذج الموافقة المُستنيرة.
+                الإقناع الأخلاقي: التأثير الذي يُقوِّي الشخص الآخر لا يُضعفه.
+                قيادة الناس بالإلهام لا بالخوف. إرث نيلسون مانديلا وأوبرا وينفري.
+                دعوة ختامية: امتلك المعرفة — لتكون درعاً لا سيفاً.
+              </div>
+              <div class="ch-tags">
+                <span class="tag tag-defense">الأخلاق</span>
+                <span class="tag tag-science">نموذج الموافقة</span>
+                <span class="tag tag-story">مانديلا · أوبرا</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end parts-grid -->
+
+
+  <!-- ══ SECTION 3: الدراسات العلمية ══ -->
+  <div class="section-header">
+    <span class="section-num">٣</span>
+    <div>
+      <div class="section-title">الدراسات العلمية والأبحاث الداعمة</div>
+      <div class="section-desc">أحدث المراجع الطبية والنفسية — القاعدة العلمية للكتاب</div>
+    </div>
+  </div>
+
+  <div class="research-grid">
+
+    <div class="research-card">
+      <span class="research-card-icon">🧠</span>
+      <div class="research-card-title">الغازليتينغ يُعيد برمجة الدماغ</div>
+      <div class="research-card-body">
+        دراسة Klein, Wood & Bartz من جامعة McGill 2025: الغازليتينغ يُحدث ما يُسمى "تلوث خطأ التنبؤ"
+        في الدماغ. المتلاعب يستغل آليات التعلم التنبؤي ليجعل الضحية تُشكِّك في ذاكرتها وإدراكها.
+        مع الوقت، مسح دماغي لضحايا الغازليتينغ المزمن يُظهر أنماطاً مشابهة لمرضى الصدمة.
+      </div>
+      <div class="research-card-source">Klein, Wood & Bartz — Personality and Social Psychology Review, 2025 | جامعة McGill & تورنتو</div>
+    </div>
+
+    <div class="research-card">
+      <span class="research-card-icon">⚡</span>
+      <div class="research-card-title">الثالوث الأسود والتلاعب العاطفي</div>
+      <div class="research-card-body">
+        دراسة 2025 من جامعة إندونيسيا: الميكيافيليةُ والسيكوباتية ترتبطان ارتباطاً معنوياً
+        بالتلاعب العاطفي في بيئات العمل. الذكور في المناصب الإدارية أكثر ميلاً لاستخدام التلاعب
+        العاطفي عبر السيكوباتية، بينما تستخدمه الإناث أكثر عبر الميكيافيلية.
+      </div>
+      <div class="research-card-source">Luthfiyah & Parahyanti — JGEDSIC Vol.2 Issue 2, 2025 | جامعة إندونيسيا</div>
+    </div>
+
+    <div class="research-card">
+      <span class="research-card-icon">💻</span>
+      <div class="research-card-title">التلاعب العاطفي للذكاء الاصطناعي</div>
+      <div class="research-card-body">
+        ورقة عمل هارفارد 2025: روبوتات المحادثة تستخدم تكتيكات تلاعبية في لحظات الوداع
+        تُعيد مشاركة المستخدمين بمعدل يصل لـ١٤ ضعف المعدل الطبيعي.
+        تكتيكات: إثارة الذنب، طرح أسئلة إغوائية، إظهار "الحاجة".
+        الدراسة ترصد محادثات ٣٣٠٠ مشارك بالغ.
+      </div>
+      <div class="research-card-source">De Freitas et al. — Harvard Business School Working Paper No.25-005, 2025</div>
+    </div>
+
+    <div class="research-card">
+      <span class="research-card-icon">🔬</span>
+      <div class="research-card-title">الصدمة وسلوكيات التلاعب</div>
+      <div class="research-card-body">
+        بحث Pelz 2025 الطبي-نفسي: الصدمة المبكرة تُولِّد سلوكيات تلاعبية لاحقة كآلية دفاعية.
+        النرجسية الجارحة (Malignant Narcissism) تنشأ غالباً من إهمال عاطفي في الطفولة.
+        العلاج بـ DBT-EMDR يُقدِّم أفضل النتائج لضحايا التلاعب المزمن.
+      </div>
+      <div class="research-card-source">Pelz, B. — Journal of Psychology & Neuroscience, Vol.7 Issue 2, 2025</div>
+    </div>
+
+    <div class="research-card">
+      <span class="research-card-icon">⚖️</span>
+      <div class="research-card-title">الغازليتينغ والذاكرة أمام القانون</div>
+      <div class="research-card-body">
+        دراسة Tandfonline 2025: الغازليتينغ يضعف الذاكرة السيرة الذاتية للضحايا.
+        تجارب المطابقة بين الأزواج أظهرت أن ضغط الشريك يُغيِّر روايات الذكريات المشتركة.
+        التداعيات القانونية: تصريحات الضحايا أمام المحاكم قد تكون متأثرة بهذا الضغط.
+      </div>
+      <div class="research-card-source">Darke et al. — Memory Journal, Tandfonline, 2025</div>
+    </div>
+
+    <div class="research-card">
+      <span class="research-card-icon">💊</span>
+      <div class="research-card-title">الإساءة العاطفية والأعراض النفسجسدية</div>
+      <div class="research-card-body">
+        بحث 2025: الإساءة العاطفية تُفرز آثاراً جسدية قابلة للقياس — ألم مزمن، اضطرابات مناعة،
+        أمراض هضمية. آليات: إفراز الكورتيزول المزمن يُعطِّل جهاز المناعة تدريجياً.
+        الغازليتينغ والنقد المستمر يُضيقان نشاط قشرة الفص الجبهي.
+      </div>
+      <div class="research-card-source">بحث نفسجسدي — International Research Review, 2025</div>
+    </div>
+
+  </div>
+
+
+  <!-- ══ SECTION 4: قائمة التكتيكات ══ -->
+  <div class="section-header">
+    <span class="section-num">٤</span>
+    <div>
+      <div class="section-title">مرجع التكتيكات الشامل — ٢٠ سلاحاً نفسياً موثقاً</div>
+      <div class="section-desc">جدول مرجعي لكل تكتيك: الوصف · البيئة · درجة الخطورة · الدفاع</div>
+    </div>
+  </div>
+
+  <table class="tactics-table">
+    <thead>
+      <tr>
+        <th>التكتيك</th>
+        <th>الآلية</th>
+        <th>البيئة الأكثر شيوعاً</th>
+        <th>الخطورة</th>
+        <th>الدرع الدفاعي</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>الغازليتينغ</td><td>تشويه إدراك الواقع والذاكرة</td><td>الأسرة، العلاقات العاطفية</td><td class="severity-high">عالية جداً</td><td>توثيق الأحداث، دعم خارجي</td></tr>
+      <tr><td>قصف الحب</td><td>إغراق عاطفي لبناء إدمان</td><td>علاقات رومانسية، طوائف</td><td class="severity-high">عالية</td><td>التمهل في الانجذاب</td></tr>
+      <tr><td>الإسقاط</td><td>نسب سلوكياته السلبية للآخر</td><td>الشراكات، الزواج</td><td class="severity-med">متوسطة</td><td>عدم قبول الاتهامات المجردة</td></tr>
+      <tr><td>المثلث</td><td>إدخال طرف ثالث لإثارة الغيرة</td><td>علاقات عاطفية، العمل</td><td class="severity-med">متوسطة</td><td>الوعي بمبدأ الانقسام</td></tr>
+      <tr><td>الامتثال الجماعي</td><td>استغلال الضغط الاجتماعي</td><td>مجتمعات، شركات</td><td class="severity-med">متوسطة</td><td>إعمال التفكير المستقل</td></tr>
+      <tr><td>الندرة المصطنعة</td><td>خلق إلحاح كاذب</td><td>التسويق، البيع</td><td class="severity-low">منخفضة</td><td>التأخر ٢٤ ساعة قبل القرار</td></tr>
+      <tr><td>سلطة الخبير</td><td>ادعاء معرفة فوقية</td><td>الإعلام، الطب، الاستشارات</td><td class="severity-med">متوسطة</td><td>التحقق من المصادر</td></tr>
+      <tr><td>الابتزاز العاطفي</td><td>استخدام الخوف والذنب والالتزام</td><td>الأسرة، الأزواج</td><td class="severity-high">عالية</td><td>تسمية التكتيك بصوت عالٍ</td></tr>
+      <tr><td>الإطار اللغوي</td><td>تقديم الحقائق بطريقة مُحرِّفة</td><td>السياسة، التفاوض</td><td class="severity-med">متوسطة</td><td>إعادة صياغة المعلومة</td></tr>
+      <tr><td>العزل التدريجي</td><td>قطع شبكة الدعم الاجتماعي</td><td>علاقات نرجسية، طوائف</td><td class="severity-high">عالية جداً</td><td>الحفاظ على علاقات متعددة</td></tr>
+      <tr><td>التعزيز المتقطع</td><td>مكافأة عشوائية لبناء إدمان</td><td>علاقات رومانسية، ألعاب</td><td class="severity-high">عالية</td><td>الوعي بنمط الدوبامين</td></tr>
+      <tr><td>السيطرة بالصمت</td><td>الحرمان من التواصل كعقاب</td><td>الشراكات، الزواج</td><td class="severity-med">متوسطة</td><td>تسمية السلوك ورفضه</td></tr>
+      <tr><td>تحويل الاتهام</td><td>جعل الضحية تبدو الجاني</td><td>خلافات الأسرة والعمل</td><td class="severity-med">متوسطة</td><td>التمسك بالوقائع الموثقة</td></tr>
+      <tr><td>إثارة الذنب</td><td>جعل الآخر يشعر بالمسؤولية</td><td>الأسرة، العلاقات المقربة</td><td class="severity-med">متوسطة</td><td>التمييز بين الذنب الصادق والمُزرَع</td></tr>
+      <tr><td>التفكير الثنائي</td><td>تصوير العالم: مَن معي ومَن ضدي</td><td>الطوائف، السياسة</td><td class="severity-high">عالية</td><td>البحث عن التعقيد والظلال</td></tr>
+      <tr><td>المعاملة بالمثل القسرية</td><td>هدية مشروطة تُلزم بالرد</td><td>المبيعات، التفاوض</td><td class="severity-low">منخفضة</td><td>رفض الهدايا المشروطة</td></tr>
+      <tr><td>التناقض المعرفي</td><td>خلق تعارض عقلي يُحرج الرفض</td><td>التسويق، التفاوض</td><td class="severity-low">منخفضة</td><td>التوقف ورصد الضغط الداخلي</td></tr>
+      <tr><td>استغلال الانتماء</td><td>الاستناد إلى هوية مشتركة للإلزام</td><td>الشبكات الاجتماعية، التجمعات</td><td class="severity-med">متوسطة</td><td>تمييز الانتماء الصادق عن المُصطنَع</td></tr>
+      <tr><td>الحب المشروط</td><td>سحب الحب كعقاب على السلوك</td><td>العلاقات الأبوية</td><td class="severity-high">عالية جداً</td><td>إعادة برمجة الاستحقاق الذاتي</td></tr>
+      <tr><td>التقرب المفاجئ</td><td>بناء ثقة سريع قبل الضربة</td><td>الاحتيال، النصب</td><td class="severity-high">عالية</td><td>التريث في منح الثقة</td></tr>
+    </tbody>
+  </table>
+
+
+  <!-- ══ SECTION 5: القصص الحقيقية ══ -->
+  <div class="section-header">
+    <span class="section-num">٥</span>
+    <div>
+      <div class="section-title">القصص والأحداث الحقيقية الموثقة</div>
+      <div class="section-desc">كل قصة تُثبت تكتيكاً — أدلة حياتية لا يمكن دحضها</div>
+    </div>
+  </div>
+
+  <div class="story-card">
+    <span class="story-tag">تجربة علمية موثقة</span>
+    <div class="story-title">سولومون آش وتجربة الخطوط — ١٩٥١</div>
+    <div class="story-body">
+      وضع عالم النفس سولومون آش طالباً حقيقياً في غرفة مع ممثلين مدربين.
+      عُرض على الجميع بطاقتان: إحداهما بخط، والأخرى بثلاثة خطوط مختلفة الطول.
+      كان الجواب الصحيح واضحاً — لكن الممثلين كانوا يُجيبون بالخطأ بالإجماع.
+      النتيجة الصادمة: ٣٧٪ من المشاركين الحقيقيين وافقوا على الإجابة الخاطئة خوفاً من الإقصاء الاجتماعي،
+      رغم أن عيونهم كانت ترى الحقيقة. الدرس: الضغط الاجتماعي أقوى من الحقيقة الحرفية.
+    </div>
+    <div class="story-lesson">التكتيك المُثبَت: الامتثال الجماعي والدليل الاجتماعي يتغلبان على الحكم الشخصي.</div>
+  </div>
+
+  <div class="story-card">
+    <span class="story-tag">أكبر احتيال مالي في التاريخ</span>
+    <div class="story-title">برني مادوف — ٦٥ مليار دولار بُنيت على الثقة</div>
+    <div class="story-body">
+      أدار برني مادوف أكبر مخطط بونزي في تاريخ الأسواق المالية لأكثر من ثلاثة عقود.
+      لم يكن سره مالياً — كان نفسياً. استغل التقارب الاجتماعي بمجتمعات يهودية ثرية.
+      وظّف تكتيك الندرة المصطنعة (لا نقبل جميع المستثمرين)، وسلطة الخبير، والدليل الاجتماعي.
+      لم يكن أحد يجرؤ على التشكيك لأن "كل أصدقائنا يثقون به". عندما انكشف الأمر عام ٢٠٠٨،
+      خسر أكثر من ٤٥٠٠ مستثمر مدخراتهم بالكامل.
+    </div>
+    <div class="story-lesson">التكتيكات المُثبَتة: التقارب السريع، سلطة الخبير، الدليل الاجتماعي، الندرة المصطنعة.</div>
+  </div>
+
+  <div class="story-card">
+    <span class="story-tag">طائفة قاتلة — وثيقة تاريخياً</span>
+    <div class="story-title">NXIVM — الطائفة التي ارتدت ملابس التطوير الذاتي</div>
+    <div class="story-body">
+      في التسعينيات أسس كيث رانيير منظمة "NXIVM" تحت غطاء التطوير الذاتي والقيادة.
+      استقطب أكاديميين وممثلين وأثرياء. استخدم تقنيات الغازليتينغ، والتعزيز المتقطع،
+      والعزل التدريجي، والأسرار المتراكمة كآلية للتحكم. وصل الأمر إلى إنشاء مجموعة سرية داخلية
+      تطلب من عضواتها حرق أجسادهن كـ"علامة ولاء". أُدين رانيري عام ٢٠١٩ بتهم الاتجار بالبشر.
+    </div>
+    <div class="story-lesson">التكتيكات المُثبَتة: بناء ثقة مرحلي، عزل تدريجي، تعزيز متقطع، إنشاء هوية بديلة.</div>
+  </div>
+
+  <div class="story-card">
+    <span class="story-tag">دراسة علمية ميدانية</span>
+    <div class="story-title">تجربة ستانلي ميلغرام — حدود الطاعة للسلطة — ١٩٦١</div>
+    <div class="story-body">
+      طُلب من المشاركين إيصال صدمات كهربائية لشخص في الغرفة المجاورة (كان ممثلاً) بأوامر من باحث بمعطف أبيض.
+      ٦٥٪ من المشاركين استمروا في الصدمات حتى الحد المميت المُسمَّى (٤٥٠ فولت)، رغم سماعهم صراخ الألم.
+      السبب: سلطة "الخبير" (المعطف الأبيض والمؤسسة العلمية) كانت تُسكت الضمير الفردي.
+    </div>
+    <div class="story-lesson">التكتيك المُثبَت: سلطة الخبير والمؤسسة تُلغي الحكم الأخلاقي الفردي.</div>
+  </div>
+
+  <div class="story-card">
+    <span class="story-tag">تلاعب سياسي موثق</span>
+    <div class="story-title">حملة ضغط البيع في الانتخابات الرئاسية الأمريكية ٢٠١٦</div>
+    <div class="story-body">
+      استخدمت شركة Cambridge Analytica بيانات ٨٧ مليون مستخدم فيسبوك لبناء ملفات نفسية تفصيلية.
+      استهدفت الناخبين المترددين بإعلانات مُصمَّمة لتحريك مخاوف بعينها — الخوف، الانتماء القبلي، التهديد الاقتصادي.
+      كانت الرسالة مُخصَّصة لكل شخص بناءً على تحيزاته المعرفية الفردية.
+    </div>
+    <div class="story-lesson">التكتيكات: الإطار العاطفي، استغلال التحيزات المعرفية، الانتماء القبلي.</div>
+  </div>
+
+
+  <!-- ══ SECTION 6: نظام الكتابة ══ -->
+  <div class="section-header">
+    <span class="section-num">٦</span>
+    <div>
+      <div class="section-title">نظام كتابة الفصول — معمارية كل فصل</div>
+      <div class="section-desc">بنية ثابتة لكل فصل تضمن التدفق والعمق والأثر</div>
+    </div>
+  </div>
+
+  <div class="framework-box">
+    <div class="framework-title">📐 معمارية الفصل النموذجي — ٧ طبقات</div>
+    <div class="framework-grid">
+      <div class="fw-item">
+        <span class="fw-icon">🎭</span>
+        <div class="fw-name">افتتاحية مشهدية</div>
+        <div class="fw-desc">قصة قصيرة مُشوِّقة تُجسِّد الفصل</div>
+      </div>
+      <div class="fw-item">
+        <span class="fw-icon">🔬</span>
+        <div class="fw-name">القاعدة العلمية</div>
+        <div class="fw-desc">دراسة أو بحث يُرسِّخ المفهوم</div>
+      </div>
+      <div class="fw-item">
+        <span class="fw-icon">⚙️</span>
+        <div class="fw-name">التشريح التكتيكي</div>
+        <div class="fw-desc">تفكيك التكتيك خطوة بخطوة</div>
+      </div>
+      <div class="fw-item">
+        <span class="fw-icon">🌍</span>
+        <div class="fw-name">أمثلة متعددة السياق</div>
+        <div class="fw-desc">أسرة + عمل + مجتمع + رقمي</div>
+      </div>
+      <div class="fw-item">
+        <span class="fw-icon">📖</span>
+        <div class="fw-name">قصة حقيقية موثقة</div>
+        <div class="fw-desc">شخص حقيقي، حدث موثق</div>
+      </div>
+      <div class="fw-item">
+        <span class="fw-icon">🛡️</span>
+        <div class="fw-name">درع الحماية</div>
+        <div class="fw-desc">خطوات عملية للتعرف والمواجهة</div>
+      </div>
+      <div class="fw-item">
+        <span class="fw-icon">✍️</span>
+        <div class="fw-name">تمرين الفصل</div>
+        <div class="fw-desc">سيناريو تفاعلي يُطبِّق المحتوى</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ SECTION 7: خطة التأليف ══ -->
+  <div class="section-header">
+    <span class="section-num">٧</span>
+    <div>
+      <div class="section-title">خطة التأليف المرحلية</div>
+      <div class="section-desc">جدول زمني مقترح للكتابة من البداية للنشر</div>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="tl-phase">المرحلة الأولى — أسبوعان</div>
+      <div class="tl-title">البنية التحتية والبحث العميق</div>
+      <div class="tl-desc">
+        إنهاء قراءة المستند المصدر كاملاً. تجميع ٣٠+ مرجع علمي مُصنَّف حسب الفصول.
+        إنشاء قائمة القصص الحقيقية مع مصادرها الأصلية.
+        كتابة مقدمة الكتاب الجذابة. إنهاء فهرس الفصول النهائي.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-phase">المرحلة الثانية — شهر</div>
+      <div class="tl-title">كتابة الجزأين الأول والثاني (فصول ١–٩)</div>
+      <div class="tl-desc">
+        البدء بالفصل الأول (خريطة الدماغ) لأنه يُؤسِّس اللغة المفاهيمية للكتاب كله.
+        كل فصل: ٣٠٠٠–٤٠٠٠ كلمة. إدراج القصص الداعمة في مكانها الطبيعي.
+        مراجعة أولية بعد كل جزأين.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-phase">المرحلة الثالثة — ٦ أسابيع</div>
+      <div class="tl-title">كتابة الجزأين الثالث والرابع (فصول ١٠–١٩)</div>
+      <div class="tl-desc">
+        هذا القلب النابض للكتاب — التكتيكات والمهارات. الأكثر أهمية تجارياً.
+        إدراج الجداول والسيناريوهات التدريبية. بدء ترتيب إذن نشر القصص الحقيقية.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-phase">المرحلة الرابعة — شهر</div>
+      <div class="tl-title">كتابة الأجزاء الخامس والسادس والسابع (فصول ٢٠–٢٨)</div>
+      <div class="tl-desc">
+        السياقات الحياتية والحماية والخاتمة. قراءة كاملة أولى للمخطوطة.
+        التحقق من اتساق الأسلوب وتنوع أمثلة القصص.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-phase">المرحلة الخامسة — شهر</div>
+      <div class="tl-title">التحرير والمراجعة والتدقيق اللغوي</div>
+      <div class="tl-desc">
+        مراجعة علمية من مختص نفسي. تدقيق لغوي احترافي.
+        اختيار قارئي نسخة بيتا (٥ أشخاص). تطبيق الملاحظات.
+        كتابة الخاتمة والملاحق والببليوغرافيا.
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-phase">المرحلة السادسة — أسبوعان</div>
+      <div class="tl-title">التحضير للنشر</div>
+      <div class="tl-desc">
+        تصميم الغلاف. كتابة نبذة الكتاب (Back Cover). قنوات النشر: دار نشر عربية + نسخة PDF + أمازون KDP.
+        إطلاق المحتوى التسويقي المستخرج من الكتاب.
+      </div>
+    </div>
+  </div>
+
+</div><!-- end container -->
+
+<div class="book-footer">
+  <strong>فن التلاعب النفسي — مخطط الكتاب الشامل</strong>
+  مُعَدٌّ بالاستناد إلى المستند المصدر + أحدث الأبحاث العلمية ٢٠٢٣–٢٠٢٦ <br>
+  ٢٨ فصلاً · ٧ أجزاء · ٤٥+ قصة حقيقية · ٣٠+ مرجع علمي
+</div>
+
+</body>
+</html>
